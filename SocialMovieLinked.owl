@@ -404,6 +404,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Arthur">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Productor"/>
+        <met rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Pierre"/>
+        <met rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Sarah"/>
     </owl:NamedIndividual>
     
 
@@ -412,6 +414,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Batiste">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Realisator"/>
+        <holdInHighEsteem rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Jean"/>
+        <isFriendWith rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Harry"/>
     </owl:NamedIndividual>
     
 
@@ -420,6 +424,9 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Cristophe">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Realisator"/>
+        <hasAFamillyRelation rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Nicolas"/>
+        <isFriendWith rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Batiste"/>
+        <met rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Hugo"/>
     </owl:NamedIndividual>
     
 
@@ -436,6 +443,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Hugo">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Realisator"/>
+        <holdInHighEsteem rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Harry"/>
+        <isFriendWith rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Cristophe"/>
     </owl:NamedIndividual>
     
 
@@ -444,6 +453,16 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Jean">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Actor"/>
+        <isFriendWith rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Arthur"/>
+        <met rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Sarah"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Nicolas -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Nicolas">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Realisator"/>
     </owl:NamedIndividual>
     
 
@@ -452,6 +471,8 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Pierre">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Actor"/>
+        <hasAFamillyRelation rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Nicolas"/>
+        <isFriendWith rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Jean"/>
     </owl:NamedIndividual>
     
 
@@ -460,6 +481,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Sarah">
         <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Productor"/>
+        <isFriendWith rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Batiste"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
