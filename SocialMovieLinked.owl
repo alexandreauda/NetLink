@@ -21,15 +21,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#HoldsInEsteem -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#HoldsInEsteem">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Person"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Person"/>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasAFamillyRelation -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasAFamillyRelation">
@@ -146,6 +137,12 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Person"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Person"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#holdInHighEsteem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#holdInHighEsteem"/>
     
 
 
