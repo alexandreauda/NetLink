@@ -33,6 +33,36 @@
     
 
 
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasAGraphWeight2 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasAGraphWeight2"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight1 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight1">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight3 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight3">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight5 -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight5">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasBeenTheProductorOfActor -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasBeenTheProductorOfActor">
@@ -111,13 +141,16 @@
 
     <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasRelationWeight4 -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasRelationWeight4"/>
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasRelationWeight4">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasAGraphWeight2"/>
+    </owl:ObjectProperty>
     
 
 
     <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasSymRelationWeight1 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasSymRelationWeight1">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight5"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
     </owl:ObjectProperty>
     
@@ -126,6 +159,7 @@
     <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasSymRelationWeight3 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasSymRelationWeight3">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight3"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
     </owl:ObjectProperty>
     
@@ -134,6 +168,7 @@
     <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasSymRelationWeight5 -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasSymRelationWeight5">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#hasASymGraphWeight1"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
     </owl:ObjectProperty>
     
