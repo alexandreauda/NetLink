@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#"
+     xml:base="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#HoldsInEsteem -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#HoldsInEsteem">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasAFamillyRelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasAFamillyRelation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheProductorOfActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheProductorOfActor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isAnActorWhoHadAsProductor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Productor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheProductorOfMovie -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheProductorOfMovie">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#workedOnMovie"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheProductor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Productor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheRealisatorOfActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheRealisatorOfActor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isAnActorWhoHadAsRealisator"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Realisator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheRealisatorOfMovie -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheRealisatorOfMovie">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#workedOnMovie"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheRealisator"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Realisator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheRealisatorOfProductor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasBeenTheRealisatorOfProductor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Realisator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Productor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasPlayedInMovie -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasPlayedInMovie">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#workedOnMovie"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheActor"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasPlayedInSameFilmThan -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasPlayedInSameFilmThan">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkManyTimeWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkManyTimeWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#haveAPathOfKnowledgeWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#haveAPathOfKnowledgeWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isAnActorWhoHadAsProductor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isAnActorWhoHadAsProductor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Productor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isAnActorWhoHadAsRealisator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isAnActorWhoHadAsRealisator">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasWorkWith"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Realisator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isChildOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isChildOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasAFamillyRelation"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isParentOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isFriendWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isFriendWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isParentOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isParentOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasAFamillyRelation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isSpouseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isSpouseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#hasAFamillyRelation"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheActor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheActor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#movieHasWorker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheProductor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheProductor">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#movieHasWorker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Productor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheRealisator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#isTheMovieWhichHasTheRealisator">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#movieHasWorker"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Realisator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#loveTheMovie -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#loveTheMovie">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#movieHasWorker -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#movieHasWorker">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#workedOnMovie"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#workedOnMovie -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#workedOnMovie">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Actor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Movie"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Productor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Productor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Realisator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Realisator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Stuntman -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Stuntman">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/untitled-ontology-33#Person"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
