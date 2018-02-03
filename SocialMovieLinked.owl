@@ -386,6 +386,81 @@
     <owl:Class rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Stuntman">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Person"/>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Arthur -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Arthur">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Productor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Batiste -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Batiste">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Realisator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Cristophe -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Cristophe">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Realisator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Harry -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Harry">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Actor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Hugo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Hugo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Realisator"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Jean -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Jean">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Actor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Pierre -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Pierre">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Actor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Sarah -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Sarah">
+        <rdf:type rdf:resource="http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#Productor"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
