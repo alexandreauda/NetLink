@@ -1,0 +1,4 @@
+prefix h:<http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#>
+select * where {
+?x h:hasAFamillyRelation ?s
+}

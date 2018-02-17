@@ -1,0 +1,13 @@
+prefix h:<http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#>
+insert {
+?x a dbo:Actor
+?x ?y ?z
+}
+where {
+	{service <http://dbpedia.org/sparql>{
+		select  * where{
+			?x a dbo:Actor
+			?x ?y ?z
+		}
+	}}
+}

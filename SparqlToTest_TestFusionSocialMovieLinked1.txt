@@ -1,0 +1,8 @@
+prefix h:<http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#>
+prefix d:<http://dbpedia.org/resource/>
+prefix o:<http://dbpedia.org/resource/>
+select * where {
+{?x dbo:spouse ?y}
+union
+{?x a h:Actor . ?x h:hasAFamillyRelation ?y}
+}
