@@ -85,7 +85,7 @@ public class Request {
 	public String getm_relationWeight5() {
 		return m_relationWeight5;
 	}
-	
+
 	public ArrayList<TripleValue> getm_adjacencyMatrixUnsorted() {
 		return m_adjacencyMatrixUnsorted;
 	}
@@ -153,9 +153,9 @@ public class Request {
 		//		}
 		//////////////////////////
 		try{
-			
+
 			System.out.println("\n-Liste des Personnes ayant un chemin de connaissances avec la personne \"Source\" et la personne \"Destination\":");
-			
+
 			org.apache.jena.query.ResultSet resultsInstancesHavePathOfKnowledgeWith = qexecInstancesHavePathOfKnowledgeWith.execSelect();
 			while (resultsInstancesHavePathOfKnowledgeWith.hasNext()){
 				//System.out.println("resultsInstancesHavePathOfKnowledgeWith Pass!!!!!!!!!!!");
@@ -165,14 +165,15 @@ public class Request {
 			}
 
 			System.out.println("\n-Liste des Personnes ayant une relation de poids 1:");
-			
+
 			org.apache.jena.query.ResultSet resultsRelationWeight1 = qexecRelationWeight1.execSelect();
 			while (resultsRelationWeight1.hasNext()){
 				//System.out.println("resultsRelationWeight1 Pass!!!!!!!!!!!");
 				QuerySolution soln = resultsRelationWeight1.nextSolution();
 				if(soln.getLiteral("label1").getString() != soln.getLiteral("label2").getString()){
-					System.out.println(soln.getLiteral("label1").getString()+" "+soln.getLiteral("label2").getString());
+					System.out.println(soln.getLiteral("label1").getString() + " " + soln.getLiteral("label2").getString());
 					m_adjacencyMatrixUnsorted.add(new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 1));
+					m_adjacencyMatrixSorted.add(new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 1));
 				}
 			}
 
@@ -183,11 +184,22 @@ public class Request {
 				//System.out.println("resultsRelationWeight2 Pass!!!!!!!!!!!");
 				QuerySolution soln = resultsRelationWeight2.nextSolution();
 				if(soln.getLiteral("label1").getString() != soln.getLiteral("label2").getString()){
-					System.out.println(soln.getLiteral("label1").getString()+" "+soln.getLiteral("label2").getString());
-					m_adjacencyMatrixUnsorted.add(new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 2));
+					TripleValue currentRelationWeightTwo= new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 2);
+					System.out.println(soln.getLiteral("label1").getString() + " " + soln.getLiteral("label2").getString());
+					m_adjacencyMatrixUnsorted.add(currentRelationWeightTwo);
+					boolean isContain = false;
+					for (int i=0;i<m_adjacencyMatrixSorted.size();i++) {
+						if(m_adjacencyMatrixSorted.get(i).nameMatch(currentRelationWeightTwo)){
+							isContain = true;
+							break;
+						}
+					}
+					if(!isContain){
+						m_adjacencyMatrixSorted.add(currentRelationWeightTwo);
+					}
 				}
 			}
-			
+
 			System.out.println("\n-Liste des Personnes ayant une relation de poids 3:");
 
 			org.apache.jena.query.ResultSet resultsRelationWeight3 = qexecRelationWeight3.execSelect();
@@ -195,11 +207,22 @@ public class Request {
 				//System.out.println("resultsRelationWeight3 Pass!!!!!!!!!!!");
 				QuerySolution soln = resultsRelationWeight3.nextSolution();
 				if(soln.getLiteral("label1").getString() != soln.getLiteral("label2").getString()){
-					System.out.println(soln.getLiteral("label1").getString()+" "+soln.getLiteral("label2").getString());
-					m_adjacencyMatrixUnsorted.add(new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 3));
+					TripleValue currentRelationWeightThree= new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 3);
+					System.out.println(soln.getLiteral("label1").getString() + " " + soln.getLiteral("label2").getString());
+					m_adjacencyMatrixUnsorted.add(currentRelationWeightThree);
+					boolean isContain = false;
+					for (int i=0;i<m_adjacencyMatrixSorted.size();i++) {
+						if(m_adjacencyMatrixSorted.get(i).nameMatch(currentRelationWeightThree)){
+							isContain = true;
+							break;
+						}
+					}
+					if(!isContain){
+						m_adjacencyMatrixSorted.add(currentRelationWeightThree);
+					}
 				}
 			}
-			
+
 			System.out.println("\n-Liste des Personnes ayant une relation de poids 4:");
 
 			org.apache.jena.query.ResultSet resultsRelationWeight4 = qexecRelationWeight4.execSelect();
@@ -207,11 +230,22 @@ public class Request {
 				//System.out.println("resultsRelationWeight4 Pass!!!!!!!!!!!");
 				QuerySolution soln = resultsRelationWeight4.nextSolution();
 				if(soln.getLiteral("label1").getString() != soln.getLiteral("label2").getString()){
-					System.out.println(soln.getLiteral("label1").getString()+" "+soln.getLiteral("label2").getString());
-					m_adjacencyMatrixUnsorted.add(new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 4));
+					TripleValue currentRelationWeightFour= new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 4);
+					System.out.println(soln.getLiteral("label1").getString() + " " + soln.getLiteral("label2").getString());
+					m_adjacencyMatrixUnsorted.add(currentRelationWeightFour);
+					boolean isContain = false;
+					for (int i=0;i<m_adjacencyMatrixSorted.size();i++) {
+						if(m_adjacencyMatrixSorted.get(i).nameMatch(currentRelationWeightFour)){
+							isContain = true;
+							break;
+						}
+					}
+					if(!isContain){
+						m_adjacencyMatrixSorted.add(currentRelationWeightFour);
+					}
 				}
 			}
-			
+
 			System.out.println("\n-Liste des Personnes ayant une relation de poids 5:");
 
 			org.apache.jena.query.ResultSet resultsRelationWeight5 = qexecRelationWeight5.execSelect();
@@ -219,8 +253,19 @@ public class Request {
 				//System.out.println("resultsRelationWeight5 Pass!!!!!!!!!!!");
 				QuerySolution soln = resultsRelationWeight5.nextSolution();
 				if(soln.getLiteral("label1").getString() != soln.getLiteral("label2").getString()){
-					System.out.println(soln.getLiteral("label1").getString()+" "+soln.getLiteral("label2").getString());
-					m_adjacencyMatrixUnsorted.add(new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 5));
+					TripleValue currentRelationWeightFive= new TripleValue(soln.getLiteral("label1").getString(), soln.getLiteral("label2").getString(), 5);
+					System.out.println(soln.getLiteral("label1").getString() + " " + soln.getLiteral("label2").getString());
+					m_adjacencyMatrixUnsorted.add(currentRelationWeightFive);
+					boolean isContain = false;
+					for (int i=0;i<m_adjacencyMatrixSorted.size();i++) {
+						if(m_adjacencyMatrixSorted.get(i).nameMatch(currentRelationWeightFive)){
+							isContain = true;
+							break;
+						}
+					}
+					if(!isContain){
+						m_adjacencyMatrixSorted.add(currentRelationWeightFive);
+					}
 				}
 			}
 		}
@@ -232,14 +277,22 @@ public class Request {
 			qexecRelationWeight4.close();
 			qexecRelationWeight5.close();
 		}
-		
-		System.out.println("\n-Print the adjacency matrix:");
-		
+
+		System.out.println("\n-Print the non-reduced adjacency matrix:");
+
 		for(int i=0; i<m_adjacencyMatrixUnsorted.size();i++){
 			System.out.println(m_adjacencyMatrixUnsorted.get(i).printTripleValue());
 		}
 		System.out.println("\nNombre de relation dans le graphe: "+m_adjacencyMatrixUnsorted.size());
-		return m_adjacencyMatrixUnsorted;
+		
+		System.out.println("\n-Print the reduced adjacency matrix:");
+
+		for(int i=0; i<m_adjacencyMatrixSorted.size();i++){
+			System.out.println(m_adjacencyMatrixSorted.get(i).printTripleValue());
+		}
+		System.out.println("\nNombre de relation dans le graphe: "+m_adjacencyMatrixSorted.size());
+		
+		return m_adjacencyMatrixSorted;
 	}
 
 

@@ -3,6 +3,7 @@ package com.corp.netlink.NetLink.graphic_design;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
 import java.io.File;
 import java.io.IOException;
 
@@ -54,6 +55,8 @@ public class MainWindowNetLink {
 	/** The initialisation. */
 	public Initialisation initialisation= new Initialisation(); //Load the file and the ontology
 
+	
+	/******CONSTRUCTORS******/
 	/**
 	 * Create the application.
 	 * @throws Exception 
@@ -61,7 +64,19 @@ public class MainWindowNetLink {
 	public MainWindowNetLink() throws Exception {
 		initializeframe();
 	}
-
+	
+	/******GETTERS AND SETTERS******/
+	public String getm_source(){
+		return m_source;
+	}
+	public String getm_destination(){
+		return m_destination;
+	}
+	public String getm_stragety(){
+		return m_stragety;
+	}
+	
+	/******METHODS******/
 	/**
 	 * Initialize the contents of the m_frame.
 	 * @throws Exception 
@@ -133,6 +148,14 @@ public class MainWindowNetLink {
 				System.out.println(m_source);
 				System.out.println(m_destination);
 				System.out.println(m_stragety);
+				
+				try {
+					computeNetLink(m_source, m_destination);
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 			}});
 
 		buttonSwitch.addActionListener(new ActionListener() {
@@ -147,21 +170,28 @@ public class MainWindowNetLink {
 		m_frame.setSize(731, 251);
 		m_frame.setLocationRelativeTo(null);
 		m_frame.setVisible(true);//Make the window visible
-
-		Request test = new Request("h:Pierre", "h:Harry");
-		RelationalGraph graphMap = new RelationalGraph(test.getm_adjacencyMatrixUnsorted());
+	}
+	
+	
+	private void computeNetLink(String nameSource, String nameDestination) throws Exception {
+		Request constructGraphOfSourceAndDestination = new Request(nameSource, nameDestination);
+		RelationalGraph graphMap = new RelationalGraph(constructGraphOfSourceAndDestination.getm_adjacencyMatrixSorted());
 
 		// Get Locations ie the persons in the graph.
 		List<String> listLoc = graphMap.getLocations();
-		System.out.println("List of all the persons:");
+		System.out.println("\n-List of all the persons:");
 		for (String loc : listLoc) {
 			System.out.println(loc);
 		}
 		System.out.println("");
+		
 
-		Problem<String, MoveToAction> problem = new GeneralProblem<>("Pierre",
+		String nameSourceClear = nameSource.replaceAll("((h:)*|(dbo:)*)*", "");
+		String nameDestinationClear = nameDestination.replaceAll("((h:)*|(dbo:)*)*", "");
+
+		Problem<String, MoveToAction> problem = new GeneralProblem<>(nameSourceClear,
 				MapFunctions.createActionsFunction(graphMap), MapFunctions.createResultFunction(),
-				GoalTest.isEqual("Harry"),
+				GoalTest.isEqual(nameDestinationClear),
 				MapFunctions.createDistanceStepCostFunction(graphMap));
 
 		SearchForActions<String, MoveToAction> search = new UniformCostSearch<>();
@@ -171,16 +201,31 @@ public class MainWindowNetLink {
 
 		System.out.println("Path recommended to follow: " + actions.toString());
 		System.out.println("Path cost of the path to follow: " + search.getMetrics().get(QueueSearch.METRIC_PATH_COST));
+		
+        SwingUtilities.invokeLater(new Runnable() {
 
+     	   @Override
+     	   public void run() {
+     		   JFrame frame = new JFrame();
+     		   frame.setAlwaysOnTop(true);//The windows will not be always on top
+     		   frame.setLocationRelativeTo(null);//We now ask our window to position itself at the center.
+     		   frame.setVisible(false);
+     		   Robot r = null;
+     		   try {
+
+     			   r = new Robot();
+
+     			} catch (AWTException e) {
+
+     				e.printStackTrace();
+
+     			}
+     		   //Left clic 
+     	       r.mousePress(InputEvent.BUTTON1_MASK);
+     	       r.mouseRelease(InputEvent.BUTTON1_MASK);
+     		   JOptionPane.showMessageDialog(frame, "Path recommended to follow:                   \n" + actions.toString() + "\n\nPath cost of the path to follow: " + search.getMetrics().get(QueueSearch.METRIC_PATH_COST), "NetLink", JOptionPane.INFORMATION_MESSAGE);
+     	   }
+     	});
 	}
 
-	public String getm_source(){
-		return m_source;
-	}
-	public String getm_destination(){
-		return m_destination;
-	}
-	public String getm_stragety(){
-		return m_stragety;
-	}
 }
