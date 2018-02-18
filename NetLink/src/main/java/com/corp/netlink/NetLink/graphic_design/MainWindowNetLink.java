@@ -51,7 +51,7 @@ public class MainWindowNetLink {
 	private JFrame m_frame;
 	private String m_source;
 	private String m_destination;
-	private String m_stragety;
+	private boolean m_isUniformCostSearch;
 	/** The initialisation. */
 	public Initialisation initialisation= new Initialisation(); //Load the file and the ontology
 
@@ -72,8 +72,8 @@ public class MainWindowNetLink {
 	public String getm_destination(){
 		return m_destination;
 	}
-	public String getm_stragety(){
-		return m_stragety;
+	public boolean getm_isUniformCostSearch(){
+		return m_isUniformCostSearch;
 	}
 	
 	/******METHODS******/
@@ -94,33 +94,30 @@ public class MainWindowNetLink {
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		JButton buttonConfirm=new JButton("confirm");
-		buttonConfirm.setBounds(309, 171, 100, 30);
+		buttonConfirm.setBounds(347, 171, 100, 30);
 		JLabel lab1=new JLabel("Source");
 		JLabel lab2=new JLabel("Destination");
-		lab1.setBounds(16, 11, 100, 15);
-		lab2.setBounds(395, 11, 100, 15);
+		lab1.setBounds(16, 11, 324, 15);
+		lab2.setBounds(455, 11, 336, 15);
 		final JTextField jtf1 = new JTextField();
 		final JTextField jtf2 = new JTextField();
-		jtf1.setBounds(16, 31, 300, 30);
-		jtf2.setBounds(395, 31, 300, 30);
+		jtf1.setBounds(16, 31, 324, 30);
+		jtf2.setBounds(455, 31, 336, 30);
 
 		JLabel lab3=new JLabel("Strategy :");
 
 
 
-		final JRadioButton randioButton1=new JRadioButton("Strategy1", true);
-		final JRadioButton randioButton2=new JRadioButton("Strategy2");
-		JRadioButton randioButton3=new JRadioButton("Strategy3");
+		final JRadioButton randioButton1=new JRadioButton("Strategy 1: Go through the path where the relationships are stronger on average with the least possible intermediary.", true);
+		final JRadioButton randioButton2=new JRadioButton("Strategy 2: Go through as few intermediaries as possible without considering the nature of the relationships between people.");
 
 		ButtonGroup group = new ButtonGroup();
 		group.add(randioButton1);
 		group.add(randioButton2);
-		group.add(randioButton3);
 
 		lab3.setBounds(16, 71, 100, 15);
-		randioButton1.setBounds(16, 91, 100, 15);
-		randioButton2.setBounds(16, 111, 100, 15);
-		randioButton3.setBounds(16, 131, 100, 15);
+		randioButton1.setBounds(16, 91, 775, 15);
+		randioButton2.setBounds(16, 111, 775, 30);
 
 		panel.add(lab1);
 		panel.add(lab2);
@@ -130,11 +127,10 @@ public class MainWindowNetLink {
 		panel.add(buttonConfirm);
 		panel.add(randioButton1);
 		panel.add(randioButton2);
-		panel.add(randioButton3);
 		contentPane.add(panel);
 
 		JButton buttonSwitch = new JButton("<=>");
-		buttonSwitch.setBounds(325, 35, 60, 23);
+		buttonSwitch.setBounds(366, 35, 60, 23);
 		panel.add(buttonSwitch);
 
 		buttonConfirm.addActionListener(new ActionListener() {
@@ -142,15 +138,17 @@ public class MainWindowNetLink {
 				m_source = jtf1.getText();
 				m_destination=jtf2.getText();
 				if (randioButton1.isSelected()){
-					m_stragety="m_stragety1";
-				} else if (randioButton2.isSelected()) m_stragety="m_stragety2";
-				else m_stragety="m_stragety3";
+					m_isUniformCostSearch=true;
+				}
+				else {
+					m_isUniformCostSearch=false;
+				}
 				System.out.println(m_source);
 				System.out.println(m_destination);
-				System.out.println(m_stragety);
+				System.out.println(m_isUniformCostSearch);
 				
 				try {
-					computeNetLink(m_source, m_destination);
+					computeNetLink(m_source, m_destination, m_isUniformCostSearch);//Compute strategy
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -167,13 +165,13 @@ public class MainWindowNetLink {
 			}});
 
 		m_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		m_frame.setSize(731, 251);
+		m_frame.setSize(825, 251);
 		m_frame.setLocationRelativeTo(null);
 		m_frame.setVisible(true);//Make the window visible
 	}
 	
 	
-	private void computeNetLink(String nameSource, String nameDestination) throws Exception {
+	private void computeNetLink(String nameSource, String nameDestination, boolean strategy) throws Exception {
 		Request constructGraphOfSourceAndDestination = new Request(nameSource, nameDestination);
 		RelationalGraph graphMap = new RelationalGraph(constructGraphOfSourceAndDestination.getm_adjacencyMatrixSorted());
 
@@ -194,7 +192,14 @@ public class MainWindowNetLink {
 				GoalTest.isEqual(nameDestinationClear),
 				MapFunctions.createDistanceStepCostFunction(graphMap));
 
-		SearchForActions<String, MoveToAction> search = new UniformCostSearch<>();
+		SearchForActions<String, MoveToAction> search;
+		if(strategy){
+			search = new UniformCostSearch<>();
+		}
+		else{
+			search = new BreadthFirstSearch<>();
+		}
+		
 		SearchAgent<String, MoveToAction> agent = new SearchAgent<>(problem, search);
 
 		List<Action> actions = agent.getActions();
