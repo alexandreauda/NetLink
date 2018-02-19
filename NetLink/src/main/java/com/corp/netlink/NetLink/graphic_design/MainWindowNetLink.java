@@ -94,15 +94,15 @@ public class MainWindowNetLink {
 		JPanel panel=new JPanel();
 		panel.setLayout(null);
 		JButton buttonConfirm=new JButton("confirm");
-		buttonConfirm.setBounds(347, 171, 100, 30);
+		buttonConfirm.setBounds(355, 460, 100, 30);
 		JLabel lab1=new JLabel("Source");
 		JLabel lab2=new JLabel("Destination");
-		lab1.setBounds(16, 11, 324, 15);
-		lab2.setBounds(455, 11, 336, 15);
+		lab1.setBounds(24, 300, 324, 15);
+		lab2.setBounds(463, 300, 336, 15);
 		final JTextField jtf1 = new JTextField();
 		final JTextField jtf2 = new JTextField();
-		jtf1.setBounds(16, 31, 324, 30);
-		jtf2.setBounds(455, 31, 336, 30);
+		jtf1.setBounds(24, 320, 324, 30);
+		jtf2.setBounds(463, 320, 336, 30);
 
 		JLabel lab3=new JLabel("Strategy :");
 
@@ -115,9 +115,9 @@ public class MainWindowNetLink {
 		group.add(randioButton1);
 		group.add(randioButton2);
 
-		lab3.setBounds(16, 71, 100, 15);
-		randioButton1.setBounds(16, 91, 775, 15);
-		randioButton2.setBounds(16, 111, 775, 30);
+		lab3.setBounds(24, 360, 100, 15);
+		randioButton1.setBounds(24, 380, 775, 15);
+		randioButton2.setBounds(24, 400, 775, 30);
 
 		panel.add(lab1);
 		panel.add(lab2);
@@ -130,8 +130,17 @@ public class MainWindowNetLink {
 		contentPane.add(panel);
 
 		JButton buttonSwitch = new JButton(new ImageIcon("Images/switchArrow.png"));
-		buttonSwitch.setBounds(366, 35, 60, 23);
+		buttonSwitch.setBounds(374, 324, 60, 23);
 		panel.add(buttonSwitch);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(24, 11, 775, 272);
+		panel.add(panel_1);
+		panel_1.setLayout(null);
+		
+		JLabel label = new JLabel(new ImageIcon("Images/image_reseau_NetLink.png"));
+		label.setBounds(0, 0, 775, 272);
+		panel_1.add(label);
 
 		buttonConfirm.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -165,7 +174,7 @@ public class MainWindowNetLink {
 			}});
 
 		m_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		m_frame.setSize(825, 251);
+		m_frame.setSize(836, 540);
 		m_frame.setLocationRelativeTo(null);
 		m_frame.setVisible(true);//Make the window visible
 	}
@@ -232,5 +241,4 @@ public class MainWindowNetLink {
      	   }
      	});
 	}
-
 }
