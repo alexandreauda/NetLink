@@ -129,7 +129,7 @@ public class MainWindowNetLink {
 		panel.add(randioButton2);
 		contentPane.add(panel);
 
-		JButton buttonSwitch = new JButton("<=>");
+		JButton buttonSwitch = new JButton(new ImageIcon("Images/switchArrow.png"));
 		buttonSwitch.setBounds(366, 35, 60, 23);
 		panel.add(buttonSwitch);
 
