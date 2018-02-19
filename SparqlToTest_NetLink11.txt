@@ -1,0 +1,2 @@
+prefix h:<http://www.semanticweb.org/alexandre/ontologies/2018/0/NetLink#>
+ask { h:Pierre h:haveAPathOfKnowledgeWith+ h:Hugo }
